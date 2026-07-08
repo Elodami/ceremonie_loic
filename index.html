@@ -6,15 +6,16 @@
   <title>Cérémonie - Loïc DAMIENS</title>
   <style>
     :root {
-      --fond: #f6ead8;
-      --fond-2: #fffaf3;
-      --carte: rgba(255, 255, 255, 0.92);
-      --texte: #211b18;
-      --doux: #6f625b;
-      --accent: #71162f;
-      --accent-2: #a9683c;
-      --ligne: #dcc7ad;
-      --ombre: 0 18px 45px rgba(62, 37, 21, 0.10);
+      --fond: #f7f1e8;
+      --fond-2: #fffdf8;
+      --carte: rgba(255, 255, 255, 0.86);
+      --texte: #29231f;
+      --doux: #6f6760;
+      --tres-doux: #91857b;
+      --accent: #6f1d37;
+      --accent-2: #b8875f;
+      --ligne: #e3d4c1;
+      --ombre: 0 22px 55px rgba(75, 52, 35, 0.10);
     }
 
     * { box-sizing: border-box; }
@@ -22,18 +23,20 @@
     body {
       margin: 0;
       color: var(--texte);
-      font-family: "Segoe UI", Arial, Helvetica, sans-serif;
-      line-height: 1.55;
+      font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      font-weight: 400;
+      line-height: 1.65;
       background:
-        radial-gradient(circle at top left, rgba(255,255,255,0.75), transparent 34rem),
+        radial-gradient(circle at 18% 0%, rgba(255,255,255,0.95), transparent 28rem),
+        radial-gradient(circle at 90% 8%, rgba(184,135,95,0.13), transparent 22rem),
         linear-gradient(135deg, var(--fond-2) 0%, var(--fond) 100%);
       min-height: 100vh;
     }
 
     .page {
-      max-width: 920px;
+      max-width: 960px;
       margin: 0 auto;
-      padding: 42px 18px 54px;
+      padding: 44px 18px 58px;
     }
 
     header {
@@ -41,111 +44,108 @@
       overflow: hidden;
       text-align: center;
       background: var(--carte);
-      padding: 46px 28px 42px;
-      border: 1px solid rgba(220, 199, 173, 0.95);
-      border-radius: 28px;
+      padding: 52px 30px 46px;
+      border: 1px solid rgba(227, 212, 193, 0.95);
+      border-radius: 32px;
       box-shadow: var(--ombre);
+      backdrop-filter: blur(10px);
     }
 
-    header::before,
-    header::after {
+    header::before {
       content: "";
       position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 130px;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--accent-2), transparent);
+      inset: 18px;
+      border: 1px solid rgba(184, 135, 95, 0.22);
+      border-radius: 24px;
+      pointer-events: none;
     }
 
-    header::before { top: 26px; }
-    header::after { bottom: 26px; }
-
     .sur-titre {
-      margin-bottom: 16px;
+      margin-bottom: 18px;
       color: var(--accent);
       font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.22em;
+      font-weight: 600;
+      letter-spacing: 0.24em;
       text-transform: uppercase;
     }
 
     h1 {
       margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(42px, 7vw, 66px);
-      font-weight: 500;
-      line-height: 1.05;
-      letter-spacing: -0.03em;
+      font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+      font-size: clamp(44px, 7vw, 72px);
+      font-weight: 400;
+      line-height: 1.02;
+      letter-spacing: -0.035em;
     }
 
     .dates {
-      margin-top: 14px;
+      margin-top: 16px;
       color: var(--accent);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 24px;
-      letter-spacing: 0.06em;
+      font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+      font-size: 27px;
+      letter-spacing: 0.05em;
     }
 
     .message {
-      max-width: 620px;
-      margin: 24px auto 0;
+      max-width: 650px;
+      margin: 26px auto 0;
       color: var(--doux);
       font-size: 16px;
       font-style: italic;
     }
 
     .section-title {
-      margin: 34px 0 18px;
+      margin: 38px 0 20px;
       color: var(--accent);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 31px;
-      font-weight: 500;
+      font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+      font-size: 34px;
+      font-weight: 400;
+      letter-spacing: -0.015em;
     }
 
     .timeline {
       position: relative;
-      padding-left: 44px;
+      padding-left: 46px;
     }
 
     .timeline::before {
       content: "";
       position: absolute;
-      left: 16px;
+      left: 17px;
       top: 18px;
       bottom: 18px;
-      width: 2px;
-      background: linear-gradient(var(--accent), #b88b69, var(--accent));
-      border-radius: 999px;
+      width: 1px;
+      background: linear-gradient(transparent, var(--accent-2), var(--accent), var(--accent-2), transparent);
     }
 
     .event {
       position: relative;
-      margin: 0 0 22px;
-      padding: 26px;
+      margin: 0 0 24px;
+      padding: 28px;
       background: var(--carte);
       border: 1px solid var(--ligne);
-      border-radius: 24px;
+      border-radius: 28px;
       box-shadow: var(--ombre);
+      backdrop-filter: blur(8px);
     }
 
     .event::before {
       content: "";
       position: absolute;
-      left: -37px;
-      top: 31px;
-      width: 18px;
-      height: 18px;
+      left: -38px;
+      top: 34px;
+      width: 15px;
+      height: 15px;
       border-radius: 50%;
       background: var(--fond-2);
-      border: 5px solid var(--accent);
-      box-shadow: 0 0 0 7px rgba(113, 22, 47, 0.08);
+      border: 4px solid var(--accent);
+      box-shadow: 0 0 0 8px rgba(111, 29, 55, 0.07);
     }
 
     .event-grid {
       display: grid;
-      grid-template-columns: 128px 1fr;
-      gap: 26px;
+      grid-template-columns: 150px 1fr;
+      gap: 28px;
       align-items: start;
     }
 
@@ -155,25 +155,45 @@
       padding-right: 22px;
     }
 
+    .day {
+      font-size: 14px;
+      font-weight: 650;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .date {
+      margin-top: 3px;
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
     .time {
-      font-size: 32px;
-      font-weight: 800;
+      margin-top: 16px;
+      font-size: 31px;
+      font-weight: 500;
       letter-spacing: -0.03em;
       line-height: 1;
     }
 
-    .date {
+    .time small {
+      display: block;
       margin-top: 8px;
-      font-size: 15px;
-      font-weight: 600;
+      color: var(--tres-doux);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
     }
 
     .event h3 {
-      margin: 0 0 16px;
-      font-size: 23px;
-      line-height: 1.15;
-      letter-spacing: 0.03em;
-      text-transform: uppercase;
+      margin: 0 0 14px;
+      color: var(--texte);
+      font-size: 22px;
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: 0.02em;
     }
 
     .lieu {
@@ -181,19 +201,35 @@
       align-items: center;
       gap: 8px;
       margin-bottom: 6px;
-      font-weight: 800;
+      color: #3b332e;
+      font-weight: 650;
     }
 
     .pin {
       color: var(--accent-2);
-      font-size: 20px;
+      font-size: 18px;
       line-height: 1;
     }
 
     .adresse {
       margin: 0;
-      color: #352d29;
+      color: #443b35;
       font-size: 16px;
+    }
+
+    .detail {
+      margin: 18px 0 0;
+      padding: 16px 18px;
+      color: var(--doux);
+      background: rgba(247, 241, 232, 0.82);
+      border: 1px solid rgba(227, 212, 193, 0.9);
+      border-radius: 18px;
+      font-size: 15.5px;
+    }
+
+    .detail strong {
+      color: var(--accent);
+      font-weight: 650;
     }
 
     .actions {
@@ -211,83 +247,70 @@
       min-height: 43px;
       padding: 11px 18px;
       border-radius: 999px;
-      border: 1px solid rgba(113, 22, 47, 0.18);
+      border: 1px solid rgba(111, 29, 55, 0.18);
       background: var(--accent);
       color: #fff;
       text-decoration: none;
       font-size: 15px;
-      font-weight: 750;
-      box-shadow: 0 8px 18px rgba(113, 22, 47, 0.18);
+      font-weight: 600;
+      box-shadow: 0 10px 22px rgba(111, 29, 55, 0.16);
       transition: transform 0.18s ease, box-shadow 0.18s ease;
     }
 
     a.button:hover {
       transform: translateY(-1px);
-      box-shadow: 0 10px 22px rgba(113, 22, 47, 0.23);
+      box-shadow: 0 12px 25px rgba(111, 29, 55, 0.22);
     }
 
     a.button.secondary {
-      background: #fff7ee;
+      background: #fffaf3;
       color: var(--accent);
       border-color: var(--ligne);
       box-shadow: none;
     }
 
     .arrow {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 22px;
-      height: 22px;
-      border: 1.5px solid currentColor;
-      border-radius: 6px;
-      transform: rotate(45deg);
-      font-size: 14px;
+      font-size: 20px;
       line-height: 1;
     }
 
-    .arrow span {
-      transform: rotate(-45deg);
-      display: block;
-      margin-left: 1px;
-    }
-
     .documents {
-      margin-top: 26px;
-      padding: 26px;
+      margin-top: 28px;
+      padding: 28px;
       background: var(--carte);
       border: 1px solid var(--ligne);
-      border-radius: 24px;
+      border-radius: 28px;
       box-shadow: var(--ombre);
     }
 
     .documents h2 {
       margin: 0 0 14px;
       color: var(--accent);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 28px;
-      font-weight: 500;
+      font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+      font-size: 31px;
+      font-weight: 400;
     }
 
     footer {
-      margin-top: 30px;
+      margin-top: 32px;
       text-align: center;
       color: var(--doux);
       font-size: 14px;
     }
 
     @media (max-width: 650px) {
-      .page { padding: 22px 12px 40px; }
-      header { padding: 42px 18px 38px; border-radius: 22px; }
+      .page { padding: 24px 12px 42px; }
+      header { padding: 46px 18px 40px; border-radius: 24px; }
+      header::before { inset: 12px; border-radius: 18px; }
       .timeline { padding-left: 32px; }
       .timeline::before { left: 11px; }
-      .event { padding: 20px; border-radius: 20px; }
-      .event::before { left: -31px; top: 27px; width: 16px; height: 16px; border-width: 4px; }
-      .event-grid { grid-template-columns: 1fr; gap: 14px; }
-      .moment { border-right: 0; border-bottom: 1px solid var(--ligne); padding: 0 0 14px; }
+      .event { padding: 21px; border-radius: 22px; }
+      .event::before { left: -31px; top: 29px; width: 14px; height: 14px; border-width: 4px; }
+      .event-grid { grid-template-columns: 1fr; gap: 16px; }
+      .moment { border-right: 0; border-bottom: 1px solid var(--ligne); padding: 0 0 16px; }
       .time { font-size: 30px; }
       .actions a.button { width: 100%; }
-      .documents { padding: 20px; border-radius: 20px; }
+      .documents { padding: 22px; border-radius: 22px; }
     }
   </style>
 </head>
@@ -296,10 +319,10 @@
     <header>
       <div class="sur-titre">Informations cérémonie</div>
 
-      <!-- À MODIFIER : remplacez Prénom NOM par le nom de votre papa -->
+      <!-- À MODIFIER : remplacez le nom ci-dessous si besoin -->
       <h1>Loïc DAMIENS</h1>
 
-      <!-- À MODIFIER : remplacez les années ci-dessous si besoin -->
+      <!-- À MODIFIER : remplacez les dates ci-dessous si besoin -->
       <div class="dates">11/06/1964 - 06/07/2026</div>
 
       <p class="message">
@@ -307,21 +330,27 @@
       </p>
     </header>
 
-    <h2 class="section-title">Déroulé de la cérémonie</h2>
+    <h2 class="section-title">Déroulé</h2>
 
     <section class="timeline">
       <article class="event">
         <div class="event-grid">
           <div class="moment">
-            <div class="time">15:30</div>
+            <div class="day">Lundi</div>
             <div class="date">13/07/2026</div>
+            <div class="time">15:30 <small>à partir de</small></div>
           </div>
           <div>
             <h3>Présentation en salon</h3>
             <div class="lieu"><span class="pin">⌖</span> Maison funéraire</div>
             <p class="adresse">2904 Avenue Kennedy<br>30000 Nîmes</p>
+            <p class="detail">
+              Le salon sera accessible <strong>24h/24</strong>, à partir du lundi 13 juillet à 15h30 et durant la journée du mardi 14 juillet.
+              L'accès se fera à l'aide d'un code, que vous pourrez nous demander.
+              Des feutres seront également mis à disposition pour celles et ceux qui souhaitent écrire un mot ou personnaliser le cercueil.
+            </p>
             <div class="actions">
-              <a class="button" href="https://www.google.com/maps/search/?api=1&query=2904+Avenue+Kennedy+30000+N%C3%AEmes" target="_blank" rel="noopener"><span class="arrow"><span>›</span></span> Itinéraire</a>
+              <a class="button" href="https://www.google.com/maps/search/?api=1&query=2904+Avenue+Kennedy+30000+N%C3%AEmes" target="_blank" rel="noopener"><span class="arrow">→</span> Itinéraire</a>
             </div>
           </div>
         </div>
@@ -330,15 +359,16 @@
       <article class="event">
         <div class="event-grid">
           <div class="moment">
-            <div class="time">09:10</div>
+            <div class="day">Mercredi</div>
             <div class="date">15/07/2026</div>
+            <div class="time">09:10</div>
           </div>
           <div>
             <h3>Cérémonie religieuse</h3>
             <div class="lieu"><span class="pin">⌖</span> Maison funéraire</div>
             <p class="adresse">2904 Avenue Kennedy<br>30000 Nîmes</p>
             <div class="actions">
-              <a class="button" href="https://www.google.com/maps/search/?api=1&query=2904+Avenue+Kennedy+30000+N%C3%AEmes" target="_blank" rel="noopener"><span class="arrow"><span>›</span></span> Itinéraire</a>
+              <a class="button" href="https://www.google.com/maps/search/?api=1&query=2904+Avenue+Kennedy+30000+N%C3%AEmes" target="_blank" rel="noopener"><span class="arrow">→</span> Itinéraire</a>
             </div>
           </div>
         </div>
@@ -347,15 +377,16 @@
       <article class="event">
         <div class="event-grid">
           <div class="moment">
-            <div class="time">11:00</div>
+            <div class="day">Mercredi</div>
             <div class="date">15/07/2026</div>
+            <div class="time">11:00</div>
           </div>
           <div>
             <h3>Crémation</h3>
             <div class="lieu"><span class="pin">⌖</span> Crématorium</div>
             <p class="adresse">490 rue Max Chabaud<br>30000 Nîmes</p>
             <div class="actions">
-              <a class="button" href="https://www.google.com/maps/search/?api=1&query=490+rue+Max+Chabaud+30000+N%C3%AEmes" target="_blank" rel="noopener"><span class="arrow"><span>›</span></span> Itinéraire</a>
+              <a class="button" href="https://www.google.com/maps/search/?api=1&query=490+rue+Max+Chabaud+30000+N%C3%AEmes" target="_blank" rel="noopener"><span class="arrow">→</span> Itinéraire</a>
             </div>
           </div>
         </div>
